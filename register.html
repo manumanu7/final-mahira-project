@@ -1,0 +1,96 @@
+<html>
+<head>
+	<link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+	<div class="registerbox">
+		<img src="avatar.jpg" class="avatar">
+			<h1>Register Here</h1>
+			<form name="myform" action="index.html">
+			<div class="user">
+				<div class="input-box">
+					<span class="details">First Name</span>
+					<input type="text" placeholder="Enter Frist Name" required="required">
+				</div>
+				<div class="input-box">
+					<span class="details">Last Name</span>
+					<input type="text" placeholder="Enter Last Name">
+				</div>
+				<div class="input-box">
+					<span class="details">Date of Birth</span>
+					<input type="date" placeholder="Enter Last Name" required="required" name="bdate">
+				</div>
+				<div class="input-box">
+					<span class="details">Username</span>
+					<input type="text" placeholder="Enter Username" required="required" name="username">
+				</div>
+				<div class="input-box">
+					<span class="details">Email</span>
+					<input type="email" placeholder="Enter Email" required="required" name="mail">
+				</div>
+				<div class="input-box">
+					<span class="details">Phone Number</span>
+					<input type="text" placeholder="Enter Phone Number" required="required" id="phno">
+				</div>
+				<div class="input-box">
+					<span class="details">Password</span>
+					<input type="password" placeholder="Enter Password" required="required" name="password">
+				</div>
+				<div class="input-box">
+					<span class="details">Conform Password</span>
+					<input type="password" placeholder="Conform your password" required="required" name="conform">
+				</div>
+			</div>
+			
+			<div class="gender-details">
+			<input type="radio" name="gender" id="dot-1">
+			<input type="radio" name="gender" id="dot-2">
+			<input type="radio" name="gender" id="dot-3">
+				<span class="gender-title">Gender</span>
+				<div class="category">
+					<label for="dot-1">
+						<span class="dot one" name="dot" ></span>
+						<span class="gender">Male</span>
+					</label>
+					<label for="dot-2">
+						<span class="dot two" name="dot" ></span>
+						<span class="Female">Female</span>
+					</label>
+					<label for="dot-3">
+						<span class="dot three" name="dot" ></span>
+						<span class="Prefer not to say">Prefer not to say</span>
+					</label>
+				</div>
+			</div>
+			<div class="button">
+				<input type="submit" value="Register" onclick="return check()">
+			</div>
+			<a href="login.html" >Already Have Account?</a>
+			
+
+			</form>
+	</div>
+<script>
+	function check()
+	{
+		var date=document.myform.bdate.value;
+		var name=document.myform.username.value;
+		var email=document.myform.mail.value;
+		var no=document.myform.phno.value;
+		var pass=document.myform.password.value;
+		var con=document.myform.conform.value;
+		if(isNaN(no))
+		{
+			alter("mobile number should be consist of numbers with 10 characters only");
+			return false;
+		}
+		if(pass!=con)
+		{
+			alert("passwords should be same");
+			return false;
+		}
+	}
+</script>
+</body>
+</html>
